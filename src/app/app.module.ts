@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
 
 const rutas: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'library', component: LibraryComponent }
 ];
 
 import { AppComponent } from './app.component';

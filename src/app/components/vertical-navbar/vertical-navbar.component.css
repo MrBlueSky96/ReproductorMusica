@@ -1,11 +1,24 @@
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  
+}
+
+
+
 .vertical-nav {
     background-color: black;
     min-width: 17rem;
+    max-width: 25rem;
     width: 17rem;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+
+    resize: horizontal;
+    overflow: auto;
   }
 
 .navbar-brand {
@@ -14,12 +27,14 @@
   font-size: 22px;
 } 
 
-.nav-lista a {
+/*Iconos*/
+
+.nav-icons a {
   color: #B3B3B3;
   transition: color .3s;
 }
 
-.nav-lista a:hover {
+.nav-icons a:hover {
   color: white;
 }
 
@@ -37,14 +52,20 @@
   margin-left: 10px;
 }
 
-.li1 {
+/*Condicionales Iconos*/
+
+.iconoActivo {
   background-color: #282828;
   border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-    #sidebar {
-      margin-left: -17rem;
-    }
-    
+.iconoActivo .iconContainer {
+  color: white;
+}
+
+
+/*Playlists*/
+
+.playlistsText {
+  color: #B3B3B3;
 }
