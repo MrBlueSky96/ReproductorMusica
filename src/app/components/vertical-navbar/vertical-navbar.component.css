@@ -1,0 +1,50 @@
+.vertical-nav {
+    background-color: black;
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+} 
+
+.nav-lista a {
+  color: #B3B3B3;
+  transition: color .3s;
+}
+
+.nav-lista a:hover {
+  color: white;
+}
+
+.nav-link-icons {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.iconContainer {
+  margin-bottom: 5px;
+}
+
+.iconContainer p {
+  display: inline;
+  margin-left: 10px;
+}
+
+.li1 {
+  background-color: #282828;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    
+}

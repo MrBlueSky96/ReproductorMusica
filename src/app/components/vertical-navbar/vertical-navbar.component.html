@@ -1,0 +1,65 @@
+<div class="vertical-nav" id="sidebar">
+  <a class="navbar-brand nav-link py-4 px-4" routerLink="/home">
+    <img src="/assets/images/spotLogo.png" alt="..." width="40">
+    Spot&fy
+  </a>
+
+  <ul class="nav flex-column mb-0 nav-lista">
+    <li class="nav-item">
+      <a routerLink="/home" class="nav-link nav-link-icons li1">
+        <div class="iconContainer">
+          <fa-icon [icon]="faHome" size="2x" [fixedWidth]="true"></fa-icon>
+          <p>Inicio</p>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/search" class="nav-link nav-link-icons">
+        <div class="iconContainer">
+          <fa-icon [icon]="faSearch" size="2x" [fixedWidth]="true"></fa-icon>
+          <p>Buscar</p>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link nav-link-icons">
+        <div class="iconContainer">
+          <fa-icon [icon]="faBookOpen" size="2x" [fixedWidth]="true"></fa-icon>
+          <p>Tu biblioteca</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
+
+  <ul class="nav flex-column mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+        Area charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+        Bar charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+        Pie charts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark font-italic">
+        <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+        Line charts
+      </a>
+    </li>
+  </ul>
+</div>
+

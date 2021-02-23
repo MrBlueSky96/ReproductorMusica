@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PruebaComponent } from './prueba.component';
+import { VerticalNavbarComponent } from './vertical-navbar.component';
 
-describe('PruebaComponent', () => {
-  let component: PruebaComponent;
-  let fixture: ComponentFixture<PruebaComponent>;
+describe('VerticalNavbarComponent', () => {
+  let component: VerticalNavbarComponent;
+  let fixture: ComponentFixture<VerticalNavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PruebaComponent ]
+      declarations: [ VerticalNavbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PruebaComponent);
+    fixture = TestBed.createComponent(VerticalNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
