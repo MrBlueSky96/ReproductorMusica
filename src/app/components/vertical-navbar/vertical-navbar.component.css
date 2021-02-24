@@ -48,8 +48,11 @@
 }
 
 .iconContainer p {
+  position: relative;
   display: inline;
   margin-left: 10px;
+  bottom: 5px;
+  font-size: 15px;
 }
 
 /*Condicionales Iconos*/
@@ -68,4 +71,18 @@
 
 .playlistsText {
   color: #B3B3B3;
+}
+
+.heartText {
+  top: 0px;
+}
+
+.separator {
+  width: 80%;
+  height: 2px;
+  background: #B3B3B3;
+  border-radius: 12px;
+  margin-top: 5px;
+  margin-left: 27px;
+  margin-right: 5px;
 }

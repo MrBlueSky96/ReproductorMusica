@@ -34,15 +34,26 @@
   
   <p class="text-uppercase px-4 py-4 mb-0 playlistsText">PLAYLISTS</p>
 
-  <ul class="nav flex-column mb-0">
+  <ul class="nav flex-column mb-0 nav-icons">
     <li class="nav-item">
-      <a routerLink="/library" routerLinkActive="iconoActivo" class="nav-link nav-link-icons">
+      <a routerLink="" routerLinkActive="" class="nav-link nav-link-icons">
         <div class="iconContainer">
-          <fa-icon [icon]="faBookOpen" size="2x" [fixedWidth]="true"></fa-icon>
-          <p>Tu biblioteca</p>
+          <fa-icon [icon]="faPlusSquare" size="2x" [fixedWidth]="true"></fa-icon>
+          <p>Crear playlist</p>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="" routerLinkActive="" class="nav-link nav-link-icons">
+        <div class="iconContainer">
+          <img src="assets/images/heart-solid.png" alt="" width="39">
+          <p class="heartText">Canciones que te gustan</p>
         </div>
       </a>
     </li>
   </ul>
+
+  <div class="separator"></div>
+
 </div>
 

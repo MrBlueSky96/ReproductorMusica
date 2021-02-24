@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-vertical-navbar',
@@ -18,5 +20,7 @@ export class VerticalNavbarComponent implements OnInit {
   faHome = faHome;
   faSearch = faSearch;
   faBookOpen = faBookOpen;
+  faPlusSquare = faPlusSquare;
+  faHeart = faHeart;
 
 }
