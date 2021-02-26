@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
 
 const rutas: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'library', component: LibraryComponent }
@@ -15,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainComponent } from './components/main/main.component';
 import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
+import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { LibraryComponent } from './components/library/library.component';
     MainComponent,
     SearchComponent,
     LibraryComponent,
+    NavbarMobileComponent,
   ],
   imports: [
     BrowserModule,

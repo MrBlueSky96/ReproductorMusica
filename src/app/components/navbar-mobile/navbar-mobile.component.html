@@ -1,0 +1,29 @@
+<nav class="navbar fixed-bottom navbar-expand" id="sidebar">
+
+    <div class="collapse navbar-collapse">
+        <div class="navbar-nav row">
+            <a routerLink="/home" routerLinkActive="iconoActivo" [routerLinkActiveOptions]="{exact:
+                true}" class="nav-item nav-link col text-center d-flex justify-content-center nav-link-icons">
+                <div class="iconContainer">
+                    <fa-icon [icon]="faHome" size="2x" [fixedWidth]="true" [classes]="['my-icon-class']"></fa-icon>
+                    <p>Inicio</p>
+                </div>
+            </a>
+            <a routerLink="/search" routerLinkActive="iconoActivo" [routerLinkActiveOptions]="{exact:
+                true}" class="nav-item nav-link col text-center d-flex justify-content-center nav-link-icons">
+                <div class="iconContainer">
+                    <fa-icon [icon]="faSearch" size="2x" [fixedWidth]="true"></fa-icon>
+                    <p>Buscar</p>
+                </div>
+            </a>
+            <a routerLink="/library" routerLinkActive="iconoActivo" [routerLinkActiveOptions]="{exact:
+                true}" class="nav-item nav-link col text-center d-flex justify-content-center nav-link-icons">
+                <div class="iconContainer">
+                    <fa-icon [icon]="faBookOpen" size="2x" [fixedWidth]="true"></fa-icon>
+                    <p>Tu biblioteca</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</nav>

@@ -6,7 +6,8 @@
 
   <ul class="nav flex-column mb-0 nav-icons">
     <li class="nav-item">
-      <a routerLink="/home" routerLinkActive="iconoActivo" class="nav-link nav-link-icons">
+      <a routerLink="/home" routerLinkActive="iconoActivo" [routerLinkActiveOptions]="{exact:
+        true}" class="nav-link nav-link-icons">
         <div class="iconContainer">
           <fa-icon [icon]="faHome" size="2x" [fixedWidth]="true"></fa-icon>
           <p>Inicio</p>
@@ -14,7 +15,8 @@
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/search" routerLinkActive="iconoActivo" class="nav-link nav-link-icons">
+      <a routerLink="/search" routerLinkActive="iconoActivo" [routerLinkActiveOptions]="{exact:
+        true}" class="nav-link nav-link-icons">
         <div class="iconContainer">
           <fa-icon [icon]="faSearch" size="2x" [fixedWidth]="true"></fa-icon>
           <p>Buscar</p>
@@ -22,7 +24,8 @@
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/library" routerLinkActive="iconoActivo" class="nav-link nav-link-icons">
+      <a routerLink="/library" routerLinkActive="iconoActivo" [routerLinkActiveOptions]="{exact:
+        true}" class="nav-link nav-link-icons">
         <div class="iconContainer">
           <fa-icon [icon]="faBookOpen" size="2x" [fixedWidth]="true"></fa-icon>
           <p>Tu biblioteca</p>

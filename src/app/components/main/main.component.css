@@ -1,4 +1,18 @@
+@media (max-width: 768px) {
+    #mainContainer {
+    margin-left: auto;
+    }
+    
+  }
+
 .mainContainer {
     background: linear-gradient(140deg, #202020, #121212);
     height: 100vh;
+
+    margin-left: 17rem;
+}
+
+.mainContainer p {
+    color: white;
+    font-size: 50px;
 }

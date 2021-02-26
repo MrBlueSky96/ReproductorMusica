@@ -1,0 +1,45 @@
+@media only screen and (max-width: 768px) {
+
+    #sidebar {
+        background-color: #282828;
+        padding: 0;
+    }
+    
+    .navbar-nav {
+        width: 100%;
+      }
+    
+    /*Iconos*/
+      
+      .nav-link-icons {
+        color: #B3B3B3;
+        padding: 0;
+      }
+    
+      .iconContainer {
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      
+      .iconContainer p {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+    
+    /*Condicionales Iconos*/
+      
+      .iconoActivo .iconContainer {
+        color: white;
+        background-color: #535151;
+      }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+
+    nav {
+        display: none;
+    }
+
+}
+
