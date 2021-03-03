@@ -16,7 +16,7 @@
     left: 0;
 
     resize: horizontal;
-    overflow: scroll;
+    overflow: auto;
     
   }
 
