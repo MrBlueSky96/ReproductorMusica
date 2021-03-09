@@ -1,5 +1,7 @@
 import { Router } from 'express';
 
+import musicController from '../controllers/musicController';
+
 class MusicRoutes {
 
    public router: Router = Router();
@@ -9,7 +11,11 @@ class MusicRoutes {
    }
 
    config(): void {
-       this.router.get('/', (rep, res) => res.send('Music'));
+       this.router.get('/', musicController.list);
+       this.router.get('/:id', musicController.getOne);
+       this.router.post('/', musicController.create);
+       this.router.delete('/:id', musicController.delete);
+       this.router.put('/:id', musicController.update);
    }
 
 }
