@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +19,8 @@ import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
 import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
 
+import {SongsService} from './songs.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +34,12 @@ import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    RouterModule.forRoot(rutas)
+    RouterModule.forRoot(rutas),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SongsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
