@@ -1,16 +1,13 @@
 <div id="mainContainer" class="container-fluid mainContainer">
+    
     <div class="col-md-4" *ngFor="let song of songs">
-        <div class="car-header">
-            {{song.title}}
-        </div>
         <div class="card-body">
             <p>{{song.title}}</p>
             <p>{{song.autor}}</p>
             <audio controls>
                 <source src={{song.route}} type="audio/mpeg">
-              Your browser does not support the audio element.
-              </audio>
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </div>
-
 </div>

@@ -9,7 +9,7 @@ import { SongsService } from '../../songs.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
+  
   songs: any = [];
 
   constructor(private songsService: SongsService) { }
@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
       },
       err => console.log(err)
     )
+    
   }
 
 }

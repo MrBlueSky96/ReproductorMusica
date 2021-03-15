@@ -10,12 +10,13 @@
     min-width: 17rem;
     max-width: 25rem;
     width: 17rem;
+
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
 
-    resize: horizontal;
+    /*resize: horizontal;*/
     overflow: auto;
     
   }
