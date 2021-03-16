@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import indexRoutes from './routes/indexRoutes';
 import musicRoutes from './routes/musicRoutes';
+import playlistRoutes from './routes/playlistRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -25,6 +26,7 @@ class Server {
     routes(): void {
         this.app.use('/', indexRoutes);
         this.app.use('/api/music', musicRoutes);
+        this.app.use('/api/playlist', playlistRoutes);
     }
 
     start(): void {

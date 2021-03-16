@@ -19,7 +19,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
 import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
 
-import {SongsService} from './songs.service';
+import {SongsService} from './servicio/songs.service';
 
 @NgModule({
   declarations: [

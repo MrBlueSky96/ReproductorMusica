@@ -16,6 +16,7 @@ class PlaylistRoutes {
         this.router.post('/', playlistController_1.default.create);
         this.router.delete('/:id', playlistController_1.default.delete);
         this.router.put('/:id', playlistController_1.default.update);
+        //this.router.get('/:id', playlistController.listSongsOfPlaylist);
     }
 }
 const playlistRoutes = new PlaylistRoutes();

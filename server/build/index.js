@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const musicRoutes_1 = __importDefault(require("./routes/musicRoutes"));
+const playlistRoutes_1 = __importDefault(require("./routes/playlistRoutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 class Server {
@@ -24,6 +25,7 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/music', musicRoutes_1.default);
+        this.app.use('/api/playlist', playlistRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

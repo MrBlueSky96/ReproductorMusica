@@ -50,6 +50,16 @@ class PlaylistController {
             res.json({ message: 'Playlist modificada' });
         });
     }
+    listSongsOfPlaylist(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const playlist = yield database_1.default.query('SELECT * FROM songs inner join song_playlist where song_playlist.id_song=songs.id AND song_playlist.id_playlist=?;', [id]);
+            //if (playlist.length > 0) {
+            return res.json(playlist);
+            //}
+            res.status(404).json({ text: 'La playlist no existe' });
+        });
+    }
 }
 const playlistController = new PlaylistController();
 exports.default = playlistController;
