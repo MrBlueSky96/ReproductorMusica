@@ -1,0 +1,26 @@
+<!--<img src="" class="" alt="...">
+        <div class="card-body">
+          <textarea [(ngModel)]="playlist.title" class="title"></textarea>
+          <p class="autor"></p>
+        </div>-->
+
+        <div class="container-fluid">
+
+            <img [src]="playlistImage" alt="">
+            <p>{{playlistTitle}}</p>
+            <p>{{playlistAutor}}</p>
+            
+            <div class="">
+                <div class="" *ngFor="let song of songsOfPlaylist">
+                    <!--<img src="{{song.image_playlist}}" alt="">-->
+                    <p>{{song.title_song}}</p>
+                    <p>{{song.autor_song}}</p>
+                </div>
+            </div>
+            
+                
+        </div>
+        
+        
+    
+

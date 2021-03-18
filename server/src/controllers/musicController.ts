@@ -12,7 +12,7 @@ class MusicController {
 
     public async getOne (req: Request, res: Response): Promise<any> {
         const {id} = req.params;
-        const song = await pool.query('SELECT * FROM songs WHERE id=?', [id]);
+        const song = await pool.query('SELECT * FROM songs WHERE id_song=?', [id]);
         
         if (song.length > 0) {
             return res.json(song [0]);
@@ -28,13 +28,13 @@ class MusicController {
 
     public async delete (req: Request, res: Response): Promise<void> {
         const {id} = req.params;
-        await pool.query('DELETE FROM songs WHERE id = ?', [id]);
+        await pool.query('DELETE FROM songs WHERE id_song = ?', [id]);
         res.json({message: 'Canción eliminada'});
     }
 
     public async update (req: Request, res: Response): Promise<void> {
         const {id} = req.params;
-        await pool.query('UPDATE songs set ? WHERE id = ?', [req.body, id]);
+        await pool.query('UPDATE songs set ? WHERE id_song = ?', [req.body, id]);
         res.json({message: 'Canción modificada'});
     }
 

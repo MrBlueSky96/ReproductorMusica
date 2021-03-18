@@ -23,7 +23,7 @@ class MusicController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const song = yield database_1.default.query('SELECT * FROM songs WHERE id=?', [id]);
+            const song = yield database_1.default.query('SELECT * FROM songs WHERE id_song=?', [id]);
             if (song.length > 0) {
                 return res.json(song[0]);
             }
@@ -39,14 +39,14 @@ class MusicController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM songs WHERE id = ?', [id]);
+            yield database_1.default.query('DELETE FROM songs WHERE id_song = ?', [id]);
             res.json({ message: 'Canción eliminada' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE songs set ? WHERE id = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE songs set ? WHERE id_song = ?', [req.body, id]);
             res.json({ message: 'Canción modificada' });
         });
     }

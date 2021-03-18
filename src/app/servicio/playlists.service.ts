@@ -18,25 +18,25 @@ export class PlaylistService {
     return this.http.get(`${this.API_URI}/playlist`);
   }
 
-  getPlaylist(id: string) {
-    return this.http.get(`${this.API_URI}/playlist/${id}`);
+  getPlaylist(id_playlist: string) {
+    return this.http.get(`${this.API_URI}/playlist/${id_playlist}`);
   }
 
-  deletePlaylists(id: string) {
-    return this.http.delete(`${this.API_URI}/playlist/${id}`);
+  deletePlaylists(id_playlist: string) {
+    return this.http.delete(`${this.API_URI}/playlist/${id_playlist}`);
   }
 
   savePlaylists(playlist: Playlist) {
     return this.http.post(`${this.API_URI}/playlist`, playlist);
   }
 
-  updatePlaylists(id: string, updatedPlaylist: Playlist): Observable<Playlist> {
-    return this.http.put(`${this.API_URI}/playlist/${id}`, updatedPlaylist);
+  updatePlaylists(id_playlist: string, updatedPlaylist: Playlist): Observable<Playlist> {
+    return this.http.put(`${this.API_URI}/playlist/${id_playlist}`, updatedPlaylist);
   }
 
 
-  getSongsOfPlaylist(id: string) {
-    return this.http.get(`${this.API_URI}/playlist/${id}`);
+  getSongsOfPlaylist(id_playlist: string) {
+    return this.http.get(`${this.API_URI}/playlist/${id_playlist}`);
   }
 
 }

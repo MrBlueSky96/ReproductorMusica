@@ -12,7 +12,7 @@ class PlaylistController {
 
     public async getOne (req: Request, res: Response): Promise<any> {
         const {id} = req.params;
-        const playlist = await pool.query('SELECT * FROM playlists WHERE id=?', [id]);
+        const playlist = await pool.query('SELECT * FROM playlists WHERE id_playlist=?', [id]);
         
         if (playlist.length > 0) {
             return res.json(playlist [0]);
@@ -28,13 +28,13 @@ class PlaylistController {
 
     public async delete (req: Request, res: Response): Promise<void> {
         const {id} = req.params;
-        await pool.query('DELETE FROM playlists WHERE id = ?', [id]);
+        await pool.query('DELETE FROM playlists WHERE id_playlist = ?', [id]);
         res.json({message: 'Playlist eliminada'});
     }
 
     public async update (req: Request, res: Response): Promise<void> {
         const {id} = req.params;
-        await pool.query('UPDATE playlists set ? WHERE id = ?', [req.body, id]);
+        await pool.query('UPDATE playlists set ? WHERE id_playlist = ?', [req.body, id]);
         res.json({message: 'Playlist modificada'});
     }
 
@@ -42,7 +42,7 @@ class PlaylistController {
     public async listSongsOfPlaylist (req: Request, res: Response): Promise<any> {
         
         const {id} = req.params;
-        const playlist = await pool.query('SELECT * FROM songs inner join song_playlist where song_playlist.id_song=songs.id AND song_playlist.id_playlist=?;', [id]);
+        const playlist = await pool.query('SELECT * FROM songs,playlists inner join song_playlist where song_playlist.id_FromSong=songs.id_song AND song_playlist.id_FromPlaylist=playlists.id_playlist AND song_playlist.id_FromPlaylist=?;', [id]);
         
         //if (playlist.length > 0) {
             return res.json(playlist);

@@ -18,20 +18,20 @@ export class SongsService {
     return this.http.get(`${this.API_URI}/music`);
   }
 
-  getSong(id: string) {
-    return this.http.get(`${this.API_URI}/music/${id}`);
+  getSong(id_song: string) {
+    return this.http.get(`${this.API_URI}/music/${id_song}`);
   }
 
-  deleteSong(id: string) {
-    return this.http.delete(`${this.API_URI}/music/${id}`);
+  deleteSong(id_song: string) {
+    return this.http.delete(`${this.API_URI}/music/${id_song}`);
   }
 
   saveSong(song: Song) {
     return this.http.post(`${this.API_URI}/music`, song);
   }
 
-  updateSong(id: string, updatedSong: Song): Observable<Song> {
-    return this.http.put(`${this.API_URI}/music/${id}`, updatedSong);
+  updateSong(id_song: string, updatedSong: Song): Observable<Song> {
+    return this.http.put(`${this.API_URI}/music/${id_song}`, updatedSong);
   }
 
 }

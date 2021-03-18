@@ -7,13 +7,50 @@
 
 .mainContainer {
     background: linear-gradient(140deg, #202020, #121212);
-    height: 100vh;
 
+    height: 100%;
+    overflow-y: auto;
     margin-left: 17rem;
-
 }
 
-.mainContainer p {
+.container {
+    width: 100%;
+    background-color: khaki;
+}
+
+.row {
+    width: 80%;
+    
+    margin-left: 60px;
+    margin-top: 80px;
+}
+
+.col-xxl-1 {
+    margin-bottom: 25px;
+}
+
+.card {
+    /*background: linear-gradient(140deg, #181818, #121212);*/
+    background-color: #181818;
+    width: 200px;
+    height: 300px;
+
+    padding: 15px;
+    margin-right: 25px;
+
+    transition: background-color .3s;
+}
+
+.card:hover {
+    /*background: linear-gradient(140deg, #393939, #404040);*/
+    background-color: #393939;
+}
+
+.card-body .title {
     color: white;
-    font-size: 50px;
+    font-weight: bold;
+}
+
+.card-body .autor {
+    color: white;
 }

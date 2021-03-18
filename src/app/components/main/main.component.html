@@ -1,25 +1,588 @@
 <div id="mainContainer" class="container-fluid mainContainer">
-    
-    <!--<div class="col-md-4" *ngFor="let song of songs">
-        <div class="card-body">
-            <p>{{song.title}}</p>
-            <p>{{song.autor}}</p>
-            <audio controls>
-                <source src={{song.route}} type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-    </div>-->
 
-    <div class="col-md-4" *ngFor="let playlist of playlists">
+
+  <div class="row">
+    <div class="col-xxl-1 colu padding-0" *ngFor="let playlist of playlists">
+      <div class="card">
+        <a [routerLink]="['/playlists', playlist.id_playlist]" class="stretched-link"></a>
+        <img [src]="playlist.image_playlist" class="card-img-top" alt="...">
         <div class="card-body">
-            <p>{{playlist.title}}</p>
-            <p>{{playlist.duration}}</p>
-            <img [src]="playlist.image" alt="">
+          <h5 class="title">{{playlist.title_playlist}}</h5>
+          <p class="autor">{{playlist.autor_playlist}}</p>
         </div>
+      </div>
+    </div>
+    <!--
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
     </div>
 
-    
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0 colu">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <div class="col-xxl-1 padding-0 colu">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-1 padding-0 colu">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-1 padding-0">
+      <div class="card">
+        <img src="../../../assets/playlists/gold.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title title">Card title</h5>
+          <p class="card-text autor">This is </p>
+        </div>
+      </div>
 
 
+    </div>-->
+
+
+  </div>
 </div>

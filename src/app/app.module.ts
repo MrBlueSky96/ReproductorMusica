@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'library', component: LibraryComponent }
+  { path: 'library', component: LibraryComponent },
+  { path: 'playlists/:id', component: PlaylistComponent }
 ];
 
 import { AppComponent } from './app.component';
@@ -18,8 +20,11 @@ import { MainComponent } from './components/main/main.component';
 import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
 import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 import {SongsService} from './servicio/songs.service';
+import {PlaylistService} from './servicio/playlists.service';
+
 
 @NgModule({
   declarations: [
@@ -30,15 +35,18 @@ import {SongsService} from './servicio/songs.service';
     SearchComponent,
     LibraryComponent,
     NavbarMobileComponent,
+    PlaylistComponent,
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     RouterModule.forRoot(rutas),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    SongsService
+    SongsService,
+    PlaylistService
   ],
   bootstrap: [AppComponent]
 })

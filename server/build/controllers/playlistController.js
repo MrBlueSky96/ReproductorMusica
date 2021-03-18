@@ -23,7 +23,7 @@ class PlaylistController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const playlist = yield database_1.default.query('SELECT * FROM playlists WHERE id=?', [id]);
+            const playlist = yield database_1.default.query('SELECT * FROM playlists WHERE id_playlist=?', [id]);
             if (playlist.length > 0) {
                 return res.json(playlist[0]);
             }
@@ -39,21 +39,21 @@ class PlaylistController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM playlists WHERE id = ?', [id]);
+            yield database_1.default.query('DELETE FROM playlists WHERE id_playlist = ?', [id]);
             res.json({ message: 'Playlist eliminada' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE playlists set ? WHERE id = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE playlists set ? WHERE id_playlist = ?', [req.body, id]);
             res.json({ message: 'Playlist modificada' });
         });
     }
     listSongsOfPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const playlist = yield database_1.default.query('SELECT * FROM songs inner join song_playlist where song_playlist.id_song=songs.id AND song_playlist.id_playlist=?;', [id]);
+            const playlist = yield database_1.default.query('SELECT * FROM songs,playlists inner join song_playlist where song_playlist.id_FromSong=songs.id_song AND song_playlist.id_FromPlaylist=playlists.id_playlist AND song_playlist.id_FromPlaylist=?;', [id]);
             //if (playlist.length > 0) {
             return res.json(playlist);
             //}

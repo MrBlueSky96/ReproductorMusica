@@ -1,8 +1,8 @@
 export interface Song{
-    id?: number;
-    title?: string;
-    autor?: string;
-    route?: string;
-    duration?: string;
-    created_at?: Date;
+    id_song?: number;
+    title_song?: string;
+    autor_song?: string;
+    route_song?: string;
+    duration_song?: string;
+    created_at_song?: Date;
 }

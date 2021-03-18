@@ -12,11 +12,11 @@ class PlaylistRoutes {
     }
     config() {
         this.router.get('/', playlistController_1.default.list);
-        this.router.get('/:id', playlistController_1.default.getOne);
+        //this.router.get('/:id', playlistController.getOne);
         this.router.post('/', playlistController_1.default.create);
         this.router.delete('/:id', playlistController_1.default.delete);
         this.router.put('/:id', playlistController_1.default.update);
-        //this.router.get('/:id', playlistController.listSongsOfPlaylist);
+        this.router.get('/:id', playlistController_1.default.listSongsOfPlaylist);
     }
 }
 const playlistRoutes = new PlaylistRoutes();
