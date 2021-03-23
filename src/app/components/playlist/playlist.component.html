@@ -1,26 +1,34 @@
-<!--<img src="" class="" alt="...">
-        <div class="card-body">
-          <textarea [(ngModel)]="playlist.title" class="title"></textarea>
-          <p class="autor"></p>
-        </div>-->
+<div class="container-fluid playlistInfo">
+    <img [src]="playlistImage" alt="">
 
-        <div class="container-fluid">
+    <div class="playlistTexts">
+        <p class="playlistTitle">{{playlistTitle}}</p>
+        <p class="playlistAutor">{{playlistAutor}}</p>
+    </div>
+</div>
 
-            <img [src]="playlistImage" alt="">
-            <p>{{playlistTitle}}</p>
-            <p>{{playlistAutor}}</p>
-            
-            <div class="">
-                <div class="" *ngFor="let song of songsOfPlaylist">
-                    <!--<img src="{{song.image_playlist}}" alt="">-->
-                    <p>{{song.title_song}}</p>
-                    <p>{{song.autor_song}}</p>
-                </div>
-            </div>
-            
-                
+
+
+
+
+<div class="songsInfo">
+    <div class="header">
+        <p class="headerTextId">#</p>
+        <p class="headerTextTitle">TÍTULO</p>
+        <i class="far fa-clock"></i>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="songContent" *ngFor="let song of songsOfPlaylist; let i = index" (click)="clickEvent(i)" 
+    [class.active]="i == clicked">
+
+        <p class="songIndex">{{i+1}}</p>
+        <div class="songTexts">
+            <p class="songTitle">{{song.title_song}}</p>
+            <p class="songAutor">{{song.autor_song}}</p>
         </div>
-        
-        
-    
+        <p class="songDuration">{{song.duration_song}}</p>
 
+    </div>
+</div>

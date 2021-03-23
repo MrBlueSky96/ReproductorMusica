@@ -11,12 +11,13 @@
     height: 100%;
     overflow-y: auto;
     margin-left: 17rem;
+
 }
 
-.container {
+/*.container {
     width: 100%;
     background-color: khaki;
-}
+}*/
 
 .row {
     width: 80%;
@@ -30,7 +31,6 @@
 }
 
 .card {
-    /*background: linear-gradient(140deg, #181818, #121212);*/
     background-color: #181818;
     width: 200px;
     height: 300px;
@@ -42,7 +42,6 @@
 }
 
 .card:hover {
-    /*background: linear-gradient(140deg, #393939, #404040);*/
     background-color: #393939;
 }
 

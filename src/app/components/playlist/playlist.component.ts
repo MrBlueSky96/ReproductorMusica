@@ -13,6 +13,8 @@ import { Playlist } from 'src/app/models/Playlist';
 })
 export class PlaylistComponent implements OnInit {
 
+  
+
   //@HostBinding('class') classes = 'row';
 
   /*song: Song = {
@@ -50,12 +52,20 @@ export class PlaylistComponent implements OnInit {
           this.songsOfPlaylist = res;
           this.playlistTitle = this.songsOfPlaylist[0].title_playlist;
           this.playlistAutor = this.songsOfPlaylist[0].autor_playlist;
-          this.playlistImage = this.songsOfPlaylist[0].image_playlist; 
+          this.playlistImage = this.songsOfPlaylist[0].image_playlist;
         },
         err => console.error(err)
       )
 
     }
+
+    
+  }
+
+  
+  clicked: any;
+  clickEvent(i: any){
+    this.clicked = i;      
   }
 
 }

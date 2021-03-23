@@ -21,9 +21,11 @@ import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
 import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import {SongsService} from './servicio/songs.service';
 import {PlaylistService} from './servicio/playlists.service';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import {PlaylistService} from './servicio/playlists.service';
     LibraryComponent,
     NavbarMobileComponent,
     PlaylistComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
