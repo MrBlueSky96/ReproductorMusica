@@ -1,10 +1,18 @@
 <footer class="text-center text-lg-start footercontainer">
 
     <div class="container">
+        <p class="">Nombre: {{songRoute}}</p>
+        <img [src]="imageRoute" alt="" width="50">
         <audio controls>
-            <source src="" type="audio/mpeg">
+            <source [src]="songRoute" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-    </div>
 
-</footer>
+        <button (click)="loadAudio(audio)">
+            Play Audio
+          </button>
+    </div>
+  
+    
+  
+  </footer>

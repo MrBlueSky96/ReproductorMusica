@@ -1,10 +1,26 @@
 <div class="container-fluid playlistInfo">
-    <img [src]="playlistImage" alt="">
+  <img [src]="playlistImage" alt="">
 
-    <div class="playlistTexts">
-        <p class="playlistTitle">{{playlistTitle}}</p>
-        <p class="playlistAutor">{{playlistAutor}}</p>
-    </div>
+  <div class="playlistTexts">
+    <p class="playlistTitle">{{playlistTitle}}</p>
+    <p class="playlistAutor">{{playlistAutor}}</p>
+  </div>
+
+  <!--Prueba de binding de audio(No funciona)-->
+  <!--<ul style="list-style: none">
+        <li>Audio Files
+          <ul #list id="list">
+            <li><button data-value="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga">Death_Becomes_Fur.oga</button></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <audio id="audio" controls="controls">
+        <source id="audioSource" src="">
+        Your browser does not support the audio format.
+      </audio>-->
+
+
 </div>
 
 
@@ -12,23 +28,79 @@
 
 
 <div class="songsInfo">
-    <div class="header">
-        <p class="headerTextId">#</p>
-        <p class="headerTextTitle">TÍTULO</p>
-        <i class="far fa-clock"></i>
-    </div>
+  <div class="header">
+    <p class="headerTextId">#</p>
+    <p class="headerTextTitle">TÍTULO</p>
+    <i class="far fa-clock"></i>
+  </div>
 
-    <div class="separator"></div>
+  <div class="separator"></div>
 
-    <div class="songContent" *ngFor="let song of songsOfPlaylist; let i = index" (click)="clickEvent(i)" 
+  <div class="songContent" *ngFor="let song of songsOfPlaylist; let i = index" (click)="clickEvent(i)"
     [class.active]="i == clicked">
 
-        <p class="songIndex">{{i+1}}</p>
-        <div class="songTexts">
-            <p class="songTitle">{{song.title_song}}</p>
-            <p class="songAutor">{{song.autor_song}}</p>
-        </div>
-        <p class="songDuration">{{song.duration_song}}</p>
-
+    <p class="songIndex">{{i+1}}</p>
+    <div class="songTexts">
+      <p class="songTitle">{{song.title_song}}</p>
+      <p class="songAutor">{{song.autor_song}}</p>
     </div>
+
+    <div class="audioContainer">
+      <audio controls>
+        <source [src]=song.route_song type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <p class="songDuration">{{song.duration_song}}</p>
+
+  </div>
 </div>
+
+<!--
+<footer class="text-center text-lg-start footercontainer">
+
+  <div class="container">
+      <p class="">Nombre: {{songRoute}}</p>
+      <img [src]="imageRoute" alt="" width="50">
+      <audio controls>
+          <source [src]="songRoute" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+
+  <button (click)="playAudio(audio)">
+    Play Audio
+  </button>
+
+</footer>
+-->
+<!--
+<app-footer 
+[songRoute]="songRoute"
+[imageRoute]="imageRoute"
+>
+</app-footer>
+
+<app-root 
+[songRoute]="songRoute"
+[imageRoute]="imageRoute"
+>
+</app-root>-->
+
+
+<!--Script de binding de audio-->
+<script>
+  list.onclick = function (e) {
+    e.preventDefault();
+
+    var elm = e.target;
+    var audio = document.getElementById('audio');
+
+    var source = document.getElementById('audioSource');
+    source.src = elm.getAttribute('data-value');
+
+    audio.load(); //call this to just preload the audio without playing
+    audio.play(); //call this to play the song right away
+  };
+</script>

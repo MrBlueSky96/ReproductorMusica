@@ -1,10 +1,10 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { SongsService } from '../../servicio/songs.service';
 import { PlaylistService } from '../../servicio/playlists.service';
 import { Song } from 'src/app/models/Song';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from 'src/app/models/Playlist'; 
 
 @Component({
   selector: 'app-playlist',
@@ -12,8 +12,6 @@ import { Playlist } from 'src/app/models/Playlist';
   styleUrls: ['./playlist.component.css']
 })
 export class PlaylistComponent implements OnInit {
-
-  
 
   //@HostBinding('class') classes = 'row';
 
@@ -40,6 +38,12 @@ export class PlaylistComponent implements OnInit {
   playlistAutor: any;
   playlistImage: any;
 
+  songRoute: any;
+  imageRoute: any;
+
+  clicked: any;
+  i: any;
+
   constructor(private songsService: SongsService, private playlistService: PlaylistService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -53,6 +57,8 @@ export class PlaylistComponent implements OnInit {
           this.playlistTitle = this.songsOfPlaylist[0].title_playlist;
           this.playlistAutor = this.songsOfPlaylist[0].autor_playlist;
           this.playlistImage = this.songsOfPlaylist[0].image_playlist;
+
+          
         },
         err => console.error(err)
       )
@@ -60,12 +66,46 @@ export class PlaylistComponent implements OnInit {
     }
 
     
+
+    
+    
+    //this.songRoute = this.songsOfPlaylist[this.clicked].route_song;  /*'../../../assets/songs/N3ÜRØ - ERROR404/ERROR404 N3ÜRØ DUBSTEP.mp3';*/
+
+    
+
+  }
+
+  /*audio = new Audio();
+
+  loadAudio(audio: any){
+    //let audio = new Audio();
+    audio.src = this.songsOfPlaylist[this.clicked].route_song;
+    audio.load();
+    //audio.play();
+  }
+
+  playAudio(audio: any){
+    audio.play();
+  }*/
+  
+
+  rutaSong: any;
+  
+  clickEvent(i: any){
+    this.clicked = i;
+    this.songRoute = this.songsOfPlaylist[this.clicked].route_song;  /*'../../../assets/songs/N3ÜRØ - ERROR404/ERROR404 N3ÜRØ DUBSTEP.mp3';*/
+    this.imageRoute = this.songsOfPlaylist[this.clicked].image_playlist;
+    //this.loadAudio(this.audio); 
+    
+
+    this.songsService.currentSong.subscribe(song => {
+      this.rutaSong = song;
+    })
+
+    this.songsService.getCurrentSong(this.songRoute);
+    
   }
 
   
-  clicked: any;
-  clickEvent(i: any){
-    this.clicked = i;      
-  }
 
 }

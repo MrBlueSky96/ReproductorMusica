@@ -138,3 +138,17 @@
     align-self: center;
     margin-top: 10px;
 }
+
+.audioContainer {
+    display: none;
+}
+
+
+.footercontainer {
+    background-color: #181818;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    color: white;
+}

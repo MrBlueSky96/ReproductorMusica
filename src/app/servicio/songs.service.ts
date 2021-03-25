@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Song } from '../models/Song';
-import { Observable } from 'rxjs';
+import { Observable , BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +32,15 @@ export class SongsService {
 
   updateSong(id_song: string, updatedSong: Song): Observable<Song> {
     return this.http.put(`${this.API_URI}/music/${id_song}`, updatedSong);
+  }
+
+
+  songSource = new BehaviorSubject('');
+  currentSong = this.songSource.asObservable();
+
+  getCurrentSong(song:any) {
+    
+    this.songSource.next(song);
   }
 
 }
