@@ -35,12 +35,12 @@ export class SongsService {
   }
 
 
+  //Cambia la ruta de la canción en el reproductor
   songSource = new BehaviorSubject('');
   currentSong = this.songSource.asObservable();
 
-  getCurrentSong(song:any) {
-    
-    this.songSource.next(song);
+  changeClickedSong(route:any) {
+    this.songSource.next(route);
   }
 
 }

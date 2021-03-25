@@ -13,36 +13,12 @@ import { Playlist } from 'src/app/models/Playlist';
 })
 export class PlaylistComponent implements OnInit {
 
-  //@HostBinding('class') classes = 'row';
-
-  /*song: Song = {
-    id_song: 0,
-    title_song: '',
-    autor_song: '',
-    route_song: '',
-    duration_song: '',
-    created_at_song: new Date()
-  };
-
-  playlist: Playlist = {
-    id_playlist: 0,
-    title_playlist: '',
-    autor_playlist: '',
-    image_playlist: '',
-    created_at_playlist: new Date()
-  };*/
-
   songsOfPlaylist: any = [];
 
   playlistTitle: any;
   playlistAutor: any;
   playlistImage: any;
 
-  songRoute: any;
-  imageRoute: any;
-
-  clicked: any;
-  i: any;
 
   constructor(private songsService: SongsService, private playlistService: PlaylistService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -56,53 +32,33 @@ export class PlaylistComponent implements OnInit {
           this.songsOfPlaylist = res;
           this.playlistTitle = this.songsOfPlaylist[0].title_playlist;
           this.playlistAutor = this.songsOfPlaylist[0].autor_playlist;
-          this.playlistImage = this.songsOfPlaylist[0].image_playlist;
-
-          
+          this.playlistImage = this.songsOfPlaylist[0].image_playlist;          
         },
         err => console.error(err)
       )
 
     }
 
-    
-
-    
-    
-    //this.songRoute = this.songsOfPlaylist[this.clicked].route_song;  /*'../../../assets/songs/N3ÜRØ - ERROR404/ERROR404 N3ÜRØ DUBSTEP.mp3';*/
-
-    
-
   }
-
-  /*audio = new Audio();
-
-  loadAudio(audio: any){
-    //let audio = new Audio();
-    audio.src = this.songsOfPlaylist[this.clicked].route_song;
-    audio.load();
-    //audio.play();
-  }
-
-  playAudio(audio: any){
-    audio.play();
-  }*/
   
+  imageRoute: any;
+  clicked: any;
+  i: any;
 
   rutaSong: any;
-  
+  songRoute: any;
+
   clickEvent(i: any){
     this.clicked = i;
-    this.songRoute = this.songsOfPlaylist[this.clicked].route_song;  /*'../../../assets/songs/N3ÜRØ - ERROR404/ERROR404 N3ÜRØ DUBSTEP.mp3';*/
-    this.imageRoute = this.songsOfPlaylist[this.clicked].image_playlist;
-    //this.loadAudio(this.audio); 
+    this.songRoute = this.songsOfPlaylist[this.clicked].route_song;
+    //this.imageRoute = this.songsOfPlaylist[this.clicked].image_playlist;
     
-
-    this.songsService.currentSong.subscribe(song => {
-      this.rutaSong = song;
+    this.songsService.currentSong.subscribe(route => {
+      this.rutaSong = route;
+      //this.songRoute = song;
     })
 
-    this.songsService.getCurrentSong(this.songRoute);
+    this.songsService.changeClickedSong(this.songRoute);
     
   }
 

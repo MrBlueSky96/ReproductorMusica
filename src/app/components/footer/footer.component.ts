@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SongsService } from 'src/app/servicio/songs.service';
 
 
@@ -9,8 +9,8 @@ import { SongsService } from 'src/app/servicio/songs.service';
 })
 export class FooterComponent implements OnInit {
 
-  @Input() songRoute: any;
-  @Input() imageRoute: any;
+  /*@Input() songRoute: any;
+  @Input() imageRoute: any;*/
 
 
   rutaSong: any;
@@ -18,8 +18,8 @@ export class FooterComponent implements OnInit {
   constructor(private songsService: SongsService) { }
 
   ngOnInit(): void {
-    this.songsService.currentSong.subscribe(song => {
-      this.rutaSong = song;
+    this.songsService.currentSong.subscribe(route => {
+      this.rutaSong = route;
     })
   }
 
@@ -33,7 +33,7 @@ export class FooterComponent implements OnInit {
     audio.src = /*this.songRoute;*/this.rutaSong;
     audio.load();
     audio.play();
-    console.log(this.songRoute);
+    //console.log(this.songRoute);
   }
 
   playAudio(audio: any){
