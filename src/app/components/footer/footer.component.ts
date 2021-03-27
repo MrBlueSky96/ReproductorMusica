@@ -16,6 +16,7 @@ export class FooterComponent implements OnInit {
 
   currentDataSong: any = [];
   paused: any;
+  appear: any;
 
   audio = new Audio();
 
@@ -36,6 +37,7 @@ export class FooterComponent implements OnInit {
       this.currentDataSong = route;
       this.loadAudio(this.audio);
       this.paused = true;
+      this.appear = true;
     })
   }
 
