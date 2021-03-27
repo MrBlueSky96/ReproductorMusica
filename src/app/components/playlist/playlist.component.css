@@ -41,7 +41,7 @@
 /*Songs section*/
 
 .songsInfo {
-    background: linear-gradient(180deg, #212121, #121212);
+    background: linear-gradient(180deg, #212121, #121212, #000000);
 
     height: 100%;
     overflow-y: auto;
@@ -137,18 +137,4 @@
     color: #A7A7A7;
     align-self: center;
     margin-top: 10px;
-}
-
-.audioContainer {
-    display: none;
-}
-
-
-.footercontainer {
-    background-color: #181818;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 10%;
-    color: white;
 }

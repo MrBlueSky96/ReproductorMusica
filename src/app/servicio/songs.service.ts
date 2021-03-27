@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Song } from '../models/Song';
-import { Observable , BehaviorSubject} from 'rxjs';
+import { Observable , BehaviorSubject, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,11 +36,13 @@ export class SongsService {
 
 
   //Cambia la ruta de la canción en el reproductor
-  songSource = new BehaviorSubject('');
+  songSource = new Subject();
   currentSong = this.songSource.asObservable();
 
   changeClickedSong(route:any) {
     this.songSource.next(route);
   }
+
+
 
 }

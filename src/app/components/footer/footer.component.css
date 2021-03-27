@@ -1,11 +1,164 @@
-.footercontainer {
+.footerContainer {
     background-color: #181818;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 10%;
+    margin: 0;
+    padding: 0;
 }
 
-p {
-    color: white;
+.elementsContainer {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 15px;
+
+    font-family: Helvetica;
+
+    /*background-color: blue;*/
+
+    height: 75%;
+    
 }
+
+.songInfoContainer{
+    width: 10%;
+    margin-top: 0rem;
+    /*background-color: blue;*/
+}
+
+
+
+.autor_titleContainer {
+    display: inline-block;
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.songTitle {
+    color: white;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.songAutor {
+    color: #A7A7A7;
+}
+
+
+/*Reproducer Controlls*/
+.reproducerContainer {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: white;
+    
+
+    /*background-color: red;*/
+    
+}
+
+.playPausecontainer {
+    position: absolute;
+    left: 47%;
+    
+}
+
+.fa-play-circle {
+    cursor: pointer;
+    display: none;
+    /*width: fit-content;*/
+    /*position: relative;*/
+    /*left: 47%;*/
+}
+
+.fa-pause-circle {
+    cursor: pointer;
+    display: none;
+    /*width: fit-content;*/
+    /*position: absolute;*/
+    /*left: 47%;*/
+}
+
+.active {
+    display: block;
+}
+
+
+/*Slider Duration*/
+.durationContainer {
+    position: absolute;
+    width: 50%;
+    
+    margin-top: 25px;
+    margin-left: 23%;
+    
+    /*background-color: blue;*/
+    bottom: 0px;
+    
+}
+
+.currentTime {
+    position: absolute;
+    display: inline-block;
+    margin-top: 2px;
+    margin-left: -35px;
+    
+}
+
+.duration{
+    position: absolute;
+    display: inline-block;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+
+
+/*Slider Volume*/
+.volumeContainer {
+    width: 10%;
+    margin-left: 85%;
+    margin-top: 2%;
+}
+
+
+.slider {
+
+    display: inline-block;
+
+    -webkit-appearance: none;
+    height: 7px;
+    margin-left: 10px;
+     
+    border-radius: 5px;
+    background: #535353;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #dad7d7;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }

@@ -1,18 +1,48 @@
-<footer class="text-center text-lg-start footercontainer">
+<footer class="text-center text-lg-start footerContainer">
 
-    <div class="container">
-        <!--<p class="">Nombre: {{songRoute}}</p>
-        <img [src]="imageRoute" alt="" width="50">
-        <audio controls>
-            <source [src]="songRoute" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>-->
+    <div class="container-fluid elementsContainer ">
 
-        <button (click)="loadAudio(audio)">
-            Play Audio
-          </button>
+        <div class="songInfoContainer">
+
+            <img [src]=currentDataSong.image_playlist alt="" width="70">
+
+
+            <div class="autor_titleContainer">
+                <p class="songTitle">{{currentDataSong.title_song}}</p>
+                <p class="songAutor">{{currentDataSong.autor_song}}</p>
+            </div>
+        </div>
+
+
+        <div class="reproducerContainer">
+
+
+            <div class="playPausecontainer">
+                <i class="fas fa-play-circle fa-2x" (click)="playAudio(audio)" [class.active]="paused == true"></i>
+                <i class="fas fa-pause-circle fa-2x" (click)="pauseAudio(audio)" [class.active]="paused == false"></i>
+            </div>
+
+            <div class="durationContainer">
+                <p class="currentTime">{{currentTime}}</p>
+
+                <input style="width: 700px;" class="slider" type="range" min="0" step="0.01" max="{{durationSeconds}}"
+                    [value]="seek" (input)="seekTo($event)">
+
+                <p class="duration">{{duration}}</p>
+
+            </div>
+
+            <div class="volumeContainer">
+                <i class="fas fa-volume-up fa-sm"></i>
+                <input class="slider" type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+            </div>
+
+
+        </div>
+
+
     </div>
-  
-    
-  
-  </footer>
+
+
+
+</footer>

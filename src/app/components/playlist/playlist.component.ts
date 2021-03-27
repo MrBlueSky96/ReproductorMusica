@@ -41,24 +41,22 @@ export class PlaylistComponent implements OnInit {
 
   }
   
-  imageRoute: any;
   clicked: any;
   i: any;
 
-  rutaSong: any;
-  songRoute: any;
+  currentDatesSong: any = [];
 
   clickEvent(i: any){
     this.clicked = i;
-    this.songRoute = this.songsOfPlaylist[this.clicked].route_song;
-    //this.imageRoute = this.songsOfPlaylist[this.clicked].image_playlist;
+
+    this.currentDatesSong = this.songsOfPlaylist[this.clicked];
+    
     
     this.songsService.currentSong.subscribe(route => {
-      this.rutaSong = route;
-      //this.songRoute = song;
+      this.currentDatesSong = route;
     })
 
-    this.songsService.changeClickedSong(this.songRoute);
+    this.songsService.changeClickedSong(this.currentDatesSong);
     
   }
 
