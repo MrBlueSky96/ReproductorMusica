@@ -54,10 +54,7 @@ class PlaylistController {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             const playlist = yield database_1.default.query('SELECT * FROM songs,playlists inner join song_playlist where song_playlist.id_FromSong=songs.id_song AND song_playlist.id_FromPlaylist=playlists.id_playlist AND song_playlist.id_FromPlaylist=?;', [id]);
-            //if (playlist.length > 0) {
             return res.json(playlist);
-            //}
-            res.status(404).json({ text: 'La playlist no existe' });
         });
     }
 }

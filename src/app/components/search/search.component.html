@@ -1,2 +1,26 @@
+<div class="container-fluid mainContainer">
+  <div class="searchContainer">
+    <i class="fa fa-search searchIcon"></i>
+    <input [formControl]="searchControl" #searchBar type="text" class="searchBox" placeholder="Artistas, canciones ...">
+    <!--<a [routerLink]="['/search', searchText]">
+      <button (click)="onSubmit(searchBar.value); " type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+      </button>
+    </a>-->
+  </div>
 
-    
+  <div class="row">
+    <div class="col-xxl-1 colu padding-0" *ngFor="let playlist of playlists">
+      <div class="card">
+        <a [routerLink]="['/playlists', playlist.id_playlist]" class="stretched-link"></a>
+        <img [src]="playlist.image_playlist" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="title">{{playlist.title_playlist}}</h5>
+          <p class="autor">{{playlist.autor_playlist}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

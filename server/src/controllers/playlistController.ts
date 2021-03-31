@@ -44,11 +44,8 @@ class PlaylistController {
         const {id} = req.params;
         const playlist = await pool.query('SELECT * FROM songs,playlists inner join song_playlist where song_playlist.id_FromSong=songs.id_song AND song_playlist.id_FromPlaylist=playlists.id_playlist AND song_playlist.id_FromPlaylist=?;', [id]);
         
-        //if (playlist.length > 0) {
-            return res.json(playlist);
-        //}
-
-        res.status(404).json({text: 'La playlist no existe'});
+        
+        return res.json(playlist);
 
     }
 

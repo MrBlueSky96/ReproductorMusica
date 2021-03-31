@@ -13,7 +13,6 @@ import { PlaylistService } from '../../servicio/playlists.service';
 })
 export class MainComponent implements OnInit {
 
-  songs: any = [];
   playlists: any = [];
 
   constructor(private songsService: SongsService, private playlistService: PlaylistService) { }

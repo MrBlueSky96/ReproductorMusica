@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'library', component: LibraryComponent },
-  { path: 'playlists/:id', component: PlaylistComponent }
+  { path: 'playlists/:id', component: PlaylistComponent },
+  { path: 'search/:searchText', component: SearchComponent }
+
 ];
 
 import { AppComponent } from './app.component';
@@ -25,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import {SongsService} from './servicio/songs.service';
 import {PlaylistService} from './servicio/playlists.service';
+import {SearchService} from './servicio/search.service';
 
 
 
@@ -45,11 +48,13 @@ import {PlaylistService} from './servicio/playlists.service';
     FontAwesomeModule,
     RouterModule.forRoot(rutas),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     SongsService,
-    PlaylistService
+    PlaylistService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
