@@ -24,10 +24,13 @@ import { LibraryComponent } from './components/library/library.component';
 import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EditPlaylistComponent } from './components/edit-playlist/edit-playlist.component';
 
 import {SongsService} from './servicio/songs.service';
 import {PlaylistService} from './servicio/playlists.service';
 import {SearchService} from './servicio/search.service';
+import {CustomPlaylistService} from './servicio/custom-playlists.service';
+
 
 
 
@@ -42,6 +45,7 @@ import {SearchService} from './servicio/search.service';
     NavbarMobileComponent,
     PlaylistComponent,
     FooterComponent,
+    EditPlaylistComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ import {SearchService} from './servicio/search.service';
   providers: [
     SongsService,
     PlaylistService,
-    SearchService
+    SearchService,
+    CustomPlaylistService
   ],
   bootstrap: [AppComponent]
 })

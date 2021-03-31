@@ -10,7 +10,8 @@ class PlaylistController {
         res.json(playlists);
     }
 
-    public async getOne (req: Request, res: Response): Promise<any> {
+
+    /*public async getOne (req: Request, res: Response): Promise<any> {
         const {id} = req.params;
         const playlist = await pool.query('SELECT * FROM playlists WHERE id_playlist=?', [id]);
         
@@ -19,18 +20,21 @@ class PlaylistController {
         }
 
         res.status(404).json({text: 'La playlist no existe'});
-    }
+    }*/
+
 
     public async create (req: Request, res: Response): Promise<void> {
         await pool.query('INSERT INTO playlists set ?', [req.body]);
         res.json({message: 'Playlist guardada'});
     }
 
+
     public async delete (req: Request, res: Response): Promise<void> {
         const {id} = req.params;
         await pool.query('DELETE FROM playlists WHERE id_playlist = ?', [id]);
         res.json({message: 'Playlist eliminada'});
     }
+
 
     public async update (req: Request, res: Response): Promise<void> {
         const {id} = req.params;

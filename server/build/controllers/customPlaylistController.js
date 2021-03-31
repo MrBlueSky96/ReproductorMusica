@@ -13,16 +13,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class PlaylistController {
-    list(req, res) {
+class CustomPlaylistController {
+    listCustomPlaylists(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const playlists = yield database_1.default.query('SELECT * FROM playlists;');
+            const playlists = yield database_1.default.query('SELECT * FROM customplaylists;');
             res.json(playlists);
         });
     }
-    /*public async getOne (req: Request, res: Response): Promise<any> {
+    /*
+    public async getOneCustomPlaylist (req: Request, res: Response): Promise<any> {
         const {id} = req.params;
-        const playlist = await pool.query('SELECT * FROM playlists WHERE id_playlist=?', [id]);
+        const playlist = await pool.query('SELECT * FROM customplaylists WHERE id_customPlaylist=?', [id]);
         
         if (playlist.length > 0) {
             return res.json(playlist [0]);
@@ -30,33 +31,33 @@ class PlaylistController {
 
         res.status(404).json({text: 'La playlist no existe'});
     }*/
-    create(req, res) {
+    createCustomPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO playlists set ?', [req.body]);
+            yield database_1.default.query('INSERT INTO customplaylists set ?', [req.body]);
             res.json({ message: 'Playlist guardada' });
         });
     }
-    delete(req, res) {
+    deleteCustomPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM playlists WHERE id_playlist = ?', [id]);
+            yield database_1.default.query('DELETE FROM customplaylists WHERE id_customPlaylist = ?', [id]);
             res.json({ message: 'Playlist eliminada' });
         });
     }
-    update(req, res) {
+    updateCustomPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE playlists set ? WHERE id_playlist = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE customplaylists set ? WHERE id_customPlaylist = ?', [req.body, id]);
             res.json({ message: 'Playlist modificada' });
         });
     }
-    listSongsOfPlaylist(req, res) {
+    listSongsOfCustomPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const playlist = yield database_1.default.query('SELECT * FROM songs,playlists inner join song_playlist where song_playlist.id_FromSong=songs.id_song AND song_playlist.id_FromPlaylist=playlists.id_playlist AND song_playlist.id_FromPlaylist=?;', [id]);
-            return res.json(playlist);
+            const customPlaylist = yield database_1.default.query('SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND song_customplaylist.id_FromCustomPlaylist=?;', [id]);
+            return res.json(customPlaylist);
         });
     }
 }
-const playlistController = new PlaylistController();
-exports.default = playlistController;
+const customPlaylistController = new CustomPlaylistController();
+exports.default = customPlaylistController;

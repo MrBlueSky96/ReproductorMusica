@@ -28,8 +28,23 @@ CREATE TABLE song_playlist(
     created_at_song_playlist TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-DESCRIBE songs;
+CREATE TABLE customPlaylists(
+    id_customPlaylist INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title_customPlaylist VARCHAR(180),
+    description_customPlaylist VARCHAR(180),
+    image_customPlaylist VARCHAR (500),
+    created_at_customPlaylist TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
+
+CREATE TABLE song_customPlaylist(
+    id_song_customPlaylist INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_FromSong INT(11) NOT NULL,
+    FOREIGN KEY(id_FromSong) REFERENCES songs(id_song),
+    id_FromCustomPlaylist INT(11) NOT NULL,
+    FOREIGN KEY(id_FromCustomPlaylist) REFERENCES customPlaylists(id_customPlaylist),
+    created_at_song_customPlaylist TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 
 "title_song": "ERROR404",

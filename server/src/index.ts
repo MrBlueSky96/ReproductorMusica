@@ -3,6 +3,7 @@ import indexRoutes from './routes/indexRoutes';
 import musicRoutes from './routes/musicRoutes';
 import playlistRoutes from './routes/playlistRoutes';
 import searchRoutes from './routes/searchRoutes';
+import customPlaylistRoutes from './routes/customPlaylistRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -29,6 +30,7 @@ class Server {
         this.app.use('/api/music', musicRoutes);
         this.app.use('/api/playlist', playlistRoutes);
         this.app.use('/api/search', searchRoutes);
+        this.app.use('/api/customPlaylist', customPlaylistRoutes);
     }
 
     start(): void {

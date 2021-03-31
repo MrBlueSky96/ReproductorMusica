@@ -5,6 +5,8 @@ import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
+import { CustomPlaylistService } from '../../servicio/custom-playlists.service';
+
 @Component({
   selector: 'app-vertical-navbar',
   templateUrl: './vertical-navbar.component.html',
