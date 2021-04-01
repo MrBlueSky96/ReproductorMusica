@@ -1,0 +1,170 @@
+/*Playlist section*/
+
+.playlistInfo {
+    margin-left: 17rem;
+    background: linear-gradient(180deg, #535353, #2A2A2A);
+    display: flex;
+}
+
+.playlistInfo img {
+    width: 275px;
+    margin-top: 5%;
+    margin-left: 15px;
+    padding-bottom: 25px;
+}
+
+.playlistTexts {
+    margin-left: 15px;
+    margin-top: 10%;
+    height: fit-content;
+}
+
+.playlistTexts p {
+    font-family: Helvetica;
+    font-weight: bold;
+    width: fit-content;
+    color: white;
+}
+
+.playlistTitle {
+    font-size: 72px;
+    margin-bottom: 0;
+}
+
+.playlistDescription {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+
+/*Songs section*/
+
+.songsInfo {
+    background: linear-gradient(180deg, #212121, #121212, #000000);
+
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 17rem;
+}
+
+/*Header*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    font-family: Helvetica;
+    height: 25px;
+    margin-left: 50px;
+    margin-top: 15px;
+    
+    color: #A7A7A7;
+
+    width: 85%;
+}
+
+.headerTextId {
+    margin-left: 40px;
+}
+
+.headerTextTitle{
+    width: 93%;
+    margin-left: 18px;
+}
+
+.fa-clock {
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+.separator {
+    width: 85%;
+    height: 2px;
+    background: #505050;
+    border-radius: 12px;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+
+/*Search Bar*/
+
+.searchSomething {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+
+.searchContainer {
+    width: 14%;
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 300px;
+    border-radius: 25px;
+    /*margin-top: 0px;*/
+    margin-left: 50px;
+ 
+}
+
+.searchIcon {
+    padding: 0.9rem;
+    background-color: white;
+}
+
+.searchBox {
+    border: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    flex: 1;
+    outline-width: 0;
+}
+
+
+/*Songs blocks*/
+
+.songContent {
+    display: flex;
+    flex-direction: row;
+    font-family: Helvetica;
+    height: fit-content;
+    margin-left: 50px;
+    margin-top: 15px;
+    
+    width: 85%;
+}
+
+.songContent:hover {
+    background-color: #5C5C5C;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #5C5C5C;
+    border-radius: 5px;
+}
+
+.songContent img {
+    width: 55px;
+    height: 55px;
+    margin-top: 10px;
+    margin-left: 18px;
+}
+
+.songTexts {
+    width: 93%;
+    margin-left: 18px;
+    margin-top: 13px;
+}
+
+.songTitle {
+    color: white;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.songAutor {
+    color: #A7A7A7;
+}
+

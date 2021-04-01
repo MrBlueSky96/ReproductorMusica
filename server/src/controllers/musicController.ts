@@ -38,6 +38,17 @@ class MusicController {
         res.json({message: 'Canción modificada'});
     }
 
+
+    public async listSongsOfCustomPlaylist (req: Request, res: Response): Promise<any> {
+        
+        const {id} = req.params;
+        const customPlaylist = await pool.query('SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND song_customplaylist.id_FromCustomPlaylist=?;', [id]);
+        
+        
+        return res.json(customPlaylist);
+
+    }
+
 }
 
 const musicController = new MusicController();

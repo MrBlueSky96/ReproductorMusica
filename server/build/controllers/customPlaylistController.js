@@ -20,17 +20,16 @@ class CustomPlaylistController {
             res.json(playlists);
         });
     }
-    /*
-    public async getOneCustomPlaylist (req: Request, res: Response): Promise<any> {
-        const {id} = req.params;
-        const playlist = await pool.query('SELECT * FROM customplaylists WHERE id_customPlaylist=?', [id]);
-        
-        if (playlist.length > 0) {
-            return res.json(playlist [0]);
-        }
-
-        res.status(404).json({text: 'La playlist no existe'});
-    }*/
+    getOneCustomPlaylist(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const playlist = yield database_1.default.query('SELECT * FROM customplaylists WHERE id_customPlaylist=?', [id]);
+            if (playlist.length > 0) {
+                return res.json(playlist[0]);
+            }
+            res.status(404).json({ text: 'La playlist no existe' });
+        });
+    }
     createCustomPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO customplaylists set ?', [req.body]);
@@ -51,11 +50,21 @@ class CustomPlaylistController {
             res.json({ message: 'Playlist modificada' });
         });
     }
-    listSongsOfCustomPlaylist(req, res) {
+    /*public async listSongsOfCustomPlaylist (req: Request, res: Response): Promise<any> {
+        
+        const {id} = req.params;
+        const customPlaylist = await pool.query('SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND song_customplaylist.id_FromCustomPlaylist=?;', [id]);
+        
+        
+        return res.json(customPlaylist);
+
+    }*/
+    insertSongInCustomPlaylist(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const customPlaylist = yield database_1.default.query('SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND song_customplaylist.id_FromCustomPlaylist=?;', [id]);
-            return res.json(customPlaylist);
+            const { idCustomPlaylist } = req.params;
+            yield database_1.default.query('INSERT INTO song_customplaylist set ?', [req.body]);
+            //await pool.query('INSERT INTO song_customplaylist (id_FromSong, id_FromCustomPlaylist) VALUES (?, ?);', [req.body, idCustomPlaylist]);
+            res.json({ message: 'Canción guardada en la playlist' });
         });
     }
 }

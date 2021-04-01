@@ -40,7 +40,7 @@
   <ul class="nav flex-column mb-0 nav-icons">
     <li class="nav-item">
       <a routerLink="/library" routerLinkActive="" [routerLinkActiveOptions]="{exact:
-        true}" class="nav-link nav-link-icons">
+        true}" class="nav-link nav-link-icons" (click)="createNewCustomPlaylist()">
         <div class="iconContainer">
           <fa-icon [icon]="faPlusSquare" size="2x" [fixedWidth]="true"></fa-icon>
           <p>Crear playlist</p>

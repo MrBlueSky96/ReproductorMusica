@@ -44,5 +44,8 @@ export class SongsService {
   }
 
 
+  getSongsOfCustomPlaylist(id_customPlaylist: string) {
+    return this.http.get(`${this.API_URI}/music/${id_customPlaylist}`);
+  }
 
 }

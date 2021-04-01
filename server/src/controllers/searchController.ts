@@ -30,6 +30,14 @@ class SearchController {
 
     }
 
+    /*public async searchSongsAndCustomPlaylists (req: Request, res: Response): Promise<any> {
+        
+        const result = await pool.query("SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND (songs.title_song LIKE '%" +req.params.searchText+"%'"+" OR songs.autor_song LIKE '%" +req.params.searchText+"%'"+" OR customPlaylists.title_customPlaylist LIKE '%" +req.params.searchText+"%'"+" OR customplaylists.autor_customPlaylist LIKE '%" +req.params.searchText+"%'"+");");
+
+        return res.json(result);
+
+    }*/
+
 }
 
 const searchController = new SearchController();

@@ -12,12 +12,13 @@ class CustomPlaylistRoutes {
 
    config(): void {
        this.router.get('/', customPlaylistController.listCustomPlaylists);
-       //this.router.get('/:id', customPlaylistController.getOne);
+       this.router.get('/:id', customPlaylistController.getOneCustomPlaylist);
        this.router.post('/', customPlaylistController.createCustomPlaylist);
        this.router.delete('/:id', customPlaylistController.deleteCustomPlaylist);
        this.router.put('/:id', customPlaylistController.updateCustomPlaylist);
 
-       this.router.get('/:id', customPlaylistController.listSongsOfCustomPlaylist);
+       //this.router.get('/:id', customPlaylistController.listSongsOfCustomPlaylist);
+       this.router.post('/:id', customPlaylistController.insertSongInCustomPlaylist);
    }
 
 }

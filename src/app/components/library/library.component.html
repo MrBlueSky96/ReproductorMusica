@@ -1,3 +1,13 @@
 <div id="mainContainer" class="container-fluid mainContainer">
-    
+    <div class="row">
+        <div class="col-xxl-1 colu padding-0" *ngFor="let customPlaylist of customPlaylists">
+          <div class="card">
+            <a [routerLink]="['/customPlaylist', customPlaylist.id_customPlaylist]" class="stretched-link"></a>
+            <img [src]="customPlaylist.image_customPlaylist == '' ? '../../../assets/images/no_image.PNG' : customPlaylist.image_customPlaylist" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="title">{{customPlaylist.title_customPlaylist}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

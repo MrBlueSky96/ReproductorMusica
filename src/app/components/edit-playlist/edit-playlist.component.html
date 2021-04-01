@@ -1,1 +1,53 @@
-<p>edit-playlist works!</p>
+<div class="container-fluid playlistInfo">
+    <img [src]="playlistImage == '' ? '../../../assets/images/no_image.PNG' : playlistImage" alt="">
+
+    <div class="playlistTexts">
+        <p class="playlistTitle">{{playlistTitle}}</p>
+        <p class="playlistDescription">{{playlistDescription}}</p>
+    </div>
+
+</div>
+
+<div class="songsInfo">
+
+    <div class="header">
+        <p class="headerTextId">#</p>
+        <p class="headerTextTitle">TÍTULO</p>
+        <i class="far fa-clock"></i>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="songContent" *ngFor="let song of songsOfCustomPlaylist; let i = index" [class.active]="i == clicked">
+
+        <div class="songTexts">
+            <p class="songTitle">{{song.title_song}}</p>
+            <p class="songAutor">{{song.autor_song}}</p>
+        </div>
+
+    </div>
+
+    <div class="separator"></div>
+
+    <p class="searchSomething">Encontremos algo para tu playlist</p>
+
+    <div class="searchContainer">
+        <i class="fa fa-search searchIcon"></i>
+        <input [formControl]="searchControl" #searchBar type="text" class="searchBox"
+            placeholder="Artistas, canciones ...">
+    </div>
+
+
+    <div class="songContent" *ngFor="let song of searchedSongs; let i = index" (click)="selectSong(i)"
+        [class.active]="i == clicked">
+
+        <img [src]="song.image_playlist" alt="">
+        <div class="songTexts">
+            <p class="songTitle">{{song.title_song}}</p>
+            <p class="songAutor">{{song.autor_song}}</p>
+        </div>
+        <button (click)="addSong(i)">AÑADIR</button>
+
+    </div>
+
+</div>

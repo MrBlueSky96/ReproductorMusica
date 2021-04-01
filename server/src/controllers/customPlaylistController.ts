@@ -11,7 +11,7 @@ class CustomPlaylistController {
     }
 
 
-    /*
+    
     public async getOneCustomPlaylist (req: Request, res: Response): Promise<any> {
         const {id} = req.params;
         const playlist = await pool.query('SELECT * FROM customplaylists WHERE id_customPlaylist=?', [id]);
@@ -21,7 +21,7 @@ class CustomPlaylistController {
         }
 
         res.status(404).json({text: 'La playlist no existe'});
-    }*/
+    }
 
 
     public async createCustomPlaylist (req: Request, res: Response): Promise<void> {
@@ -44,7 +44,7 @@ class CustomPlaylistController {
     }
 
 
-    public async listSongsOfCustomPlaylist (req: Request, res: Response): Promise<any> {
+    /*public async listSongsOfCustomPlaylist (req: Request, res: Response): Promise<any> {
         
         const {id} = req.params;
         const customPlaylist = await pool.query('SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND song_customplaylist.id_FromCustomPlaylist=?;', [id]);
@@ -52,6 +52,14 @@ class CustomPlaylistController {
         
         return res.json(customPlaylist);
 
+    }*/
+
+
+    public async insertSongInCustomPlaylist (req: Request, res: Response): Promise<void> {
+        const {idCustomPlaylist} = req.params;
+        await pool.query('INSERT INTO song_customplaylist set ?', [req.body]);
+        //await pool.query('INSERT INTO song_customplaylist (id_FromSong, id_FromCustomPlaylist) VALUES (?, ?);', [req.body, idCustomPlaylist]);
+        res.json({message: 'Canción guardada en la playlist'});
     }
 
 }

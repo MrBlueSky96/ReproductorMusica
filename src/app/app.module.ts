@@ -10,7 +10,8 @@ const rutas: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'library', component: LibraryComponent },
   { path: 'playlists/:id', component: PlaylistComponent },
-  { path: 'search/:searchText', component: SearchComponent }
+  { path: 'search/:searchText', component: SearchComponent },
+  { path: 'customPlaylist/:id', component: EditPlaylistComponent }
 
 ];
 

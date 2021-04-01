@@ -50,6 +50,13 @@ class MusicController {
             res.json({ message: 'Canción modificada' });
         });
     }
+    listSongsOfCustomPlaylist(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const customPlaylist = yield database_1.default.query('SELECT * FROM songs,customplaylists inner join song_customplaylist where song_customplaylist.id_FromSong=songs.id_song AND song_customplaylist.id_FromCustomPlaylist=customplaylists.id_customPlaylist AND song_customplaylist.id_FromCustomPlaylist=?;', [id]);
+            return res.json(customPlaylist);
+        });
+    }
 }
 const musicController = new MusicController();
 exports.default = musicController;

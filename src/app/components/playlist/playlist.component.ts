@@ -23,6 +23,7 @@ export class PlaylistComponent implements OnInit {
   constructor(private songsService: SongsService, private playlistService: PlaylistService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    
     const params = this.activatedRoute.snapshot.params;
     if (params.id) {
       this.playlistService.getSongsOfPlaylist(params.id)

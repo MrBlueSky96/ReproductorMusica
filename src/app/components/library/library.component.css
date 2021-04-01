@@ -6,3 +6,39 @@
     margin-left: 17rem;
 
 }
+
+/*Cards*/
+.row {
+    width: 80%;
+    
+    margin-left: 60px;
+    margin-top: 80px;
+}
+
+.col-xxl-1 {
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: #181818;
+    width: 200px;
+    height: 300px;
+
+    padding: 15px;
+    margin-right: 25px;
+
+    transition: background-color .3s;
+}
+
+.card:hover {
+    background-color: #393939;
+}
+
+.card-body .title {
+    color: white;
+    font-weight: bold;
+}
+
+.card-body .autor {
+    color: white;
+}

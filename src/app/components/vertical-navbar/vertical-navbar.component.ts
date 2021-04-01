@@ -7,6 +7,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import { CustomPlaylistService } from '../../servicio/custom-playlists.service';
 
+import { CustomPlaylist } from '../../models/CustomPlaylist';
+
 @Component({
   selector: 'app-vertical-navbar',
   templateUrl: './vertical-navbar.component.html',
@@ -14,15 +16,41 @@ import { CustomPlaylistService } from '../../servicio/custom-playlists.service';
 })
 export class VerticalNavbarComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(private customPlaylistService: CustomPlaylistService) { }
 
   faHome = faHome;
   faSearch = faSearch;
   faBookOpen = faBookOpen;
   faPlusSquare = faPlusSquare;
   faHeart = faHeart;
+
+  ngOnInit(): void {
+  }
+
+
+  customPlaylist: CustomPlaylist = {
+    id_customPlaylist: 0,
+    title_customPlaylist: '',
+    description_customPlaylist: '',
+    image_customPlaylist: '',
+    created_at_customPlaylist: new Date()
+  }
+
+  createNewCustomPlaylist() {
+
+    this.customPlaylist.title_customPlaylist = 'Mi playlist n.º ' + this.customPlaylist.id_customPlaylist;
+
+    delete this.customPlaylist.created_at_customPlaylist;
+    delete this.customPlaylist.id_customPlaylist;
+
+    this.customPlaylistService.saveCustomPlaylists(this.customPlaylist)
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
+  }
+  
 
 }

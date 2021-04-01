@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { CustomPlaylist } from '../models/CustomPlaylist';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +35,13 @@ export class CustomPlaylistService {
   }
 
 
-  getSongsOfCustomPlaylist(id_customPlaylist: string) {
-    return this.http.get(`${this.API_URI}/customPlaylist/${id_customPlaylist}`);
+
+  saveSongInCustomPlaylist(id_customPlaylist: any, idFromsong_CustomPlaylist: any[]) {
+    return this.http.post(`${this.API_URI}/customPlaylist/${id_customPlaylist}`, idFromsong_CustomPlaylist);
   }
+
+  /*getSongsOfCustomPlaylist(id_customPlaylist: string) {
+    return this.http.get(`${this.API_URI}/customPlaylist/${id_customPlaylist}`);
+  }*/
 
 }

@@ -12,10 +12,11 @@ class MusicRoutes {
     }
     config() {
         this.router.get('/', musicController_1.default.list);
-        this.router.get('/:id', musicController_1.default.getOne);
+        //this.router.get('/:id', musicController.getOne);
         this.router.post('/', musicController_1.default.create);
         this.router.delete('/:id', musicController_1.default.delete);
         this.router.put('/:id', musicController_1.default.update);
+        this.router.get('/:id', musicController_1.default.listSongsOfCustomPlaylist);
     }
 }
 const musicRoutes = new MusicRoutes();
