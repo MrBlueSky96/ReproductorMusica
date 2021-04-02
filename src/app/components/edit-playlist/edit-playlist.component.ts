@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -89,19 +90,55 @@ export class EditPlaylistComponent implements OnInit {
   clicked: any;
   i: any;
 
-  currentDatesSong: any = [];
+  currentDatesSearchedSong: any = [];
 
-  selectSong(i: any) {
+  //Songs of customPlaylist methods
+  selectCustomSong(i: any) {
     this.clicked = i;
 
-    this.currentDatesSong = this.searchedSongs[this.clicked];
-    console.log(this.currentDatesSong);
+    this.currentDatesSearchedSong = this.songsOfCustomPlaylist[this.clicked];
+    console.log(this.currentDatesSearchedSong);
 
     this.songsService.currentSong.subscribe(route => {
-      this.currentDatesSong = route;
+      this.currentDatesSearchedSong = route;
     })
 
-    this.songsService.changeClickedSong(this.currentDatesSong);
+    this.songsService.changeClickedSong(this.currentDatesSearchedSong);
+  }
+
+
+  deleteSong(i: any) {
+
+    this.selectCustomSong(i);
+
+    const params = this.activatedRoute.snapshot.params;
+
+    this.songsService.options.body.id_FromSong = this.currentDatesSearchedSong.id_song;
+    this.songsService.options.body.id_FromCustomPlaylist = params.id;
+
+    this.songsService.deleteSongOfCustomPlaylist()
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
+    
+  }
+
+
+  //Search song methods
+  selectSearchedSong(i: any) {
+    this.clicked = i;
+
+    this.currentDatesSearchedSong = this.searchedSongs[this.clicked];
+    console.log(this.currentDatesSearchedSong);
+
+    this.songsService.currentSong.subscribe(route => {
+      this.currentDatesSearchedSong = route;
+    })
+
+    this.songsService.changeClickedSong(this.currentDatesSearchedSong);
 
   }
 
@@ -113,11 +150,11 @@ export class EditPlaylistComponent implements OnInit {
 
   addSong(i: any) {
 
-    this.selectSong(i);
+    this.selectSearchedSong(i);
 
     const params = this.activatedRoute.snapshot.params;
 
-    this.idFromsong_CustomPlaylist.id_FromSong = this.currentDatesSong.id_song;
+    this.idFromsong_CustomPlaylist.id_FromSong = this.currentDatesSearchedSong.id_song;
     this.idFromsong_CustomPlaylist.id_FromCustomPlaylist = parseInt(params.id);
 
     this.customPlaylistService.saveSongInCustomPlaylist(params.id,this.idFromsong_CustomPlaylist)

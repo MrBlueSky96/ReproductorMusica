@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Song } from '../models/Song';
 import { Observable , BehaviorSubject, Subject} from 'rxjs';
@@ -46,6 +46,22 @@ export class SongsService {
 
   getSongsOfCustomPlaylist(id_customPlaylist: string) {
     return this.http.get(`${this.API_URI}/music/${id_customPlaylist}`);
+  }
+
+
+
+  options = {
+    headers: new HttpHeaders({
+      //'Content-Type': 'application/json',
+    }),
+    body: {
+      id_FromCustomPlaylist: '',
+      id_FromSong: ''
+    },
+  }
+
+  deleteSongOfCustomPlaylist() {
+    return this.http.delete(`${this.API_URI}/music/`, this.options);
   }
 
 }

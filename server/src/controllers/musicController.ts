@@ -49,6 +49,11 @@ class MusicController {
 
     }
 
+    public async deleteSongOfCustomPlaylist (req: Request, res: Response): Promise<void> {
+        await pool.query('DELETE FROM song_customplaylist WHERE id_FromCustomPlaylist = ? AND id_FromSong = ?', [req.body.id_FromCustomPlaylist, req.body.id_FromSong]);
+        res.json({message: 'Canción eliminada'});
+    }
+
 }
 
 const musicController = new MusicController();

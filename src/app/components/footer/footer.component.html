@@ -4,7 +4,7 @@
 
         <div class="songInfoContainer">
 
-            <img [src]=currentDataSong.image_playlist alt="" width="70">
+            <img [src]="currentDataSong.image_playlist == '' ? '../../../assets/images/no_image.PNG' : currentDataSong.image_playlist"alt="" width="70">
 
 
             <div class="autor_titleContainer">

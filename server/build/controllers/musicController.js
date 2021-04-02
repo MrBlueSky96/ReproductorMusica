@@ -57,6 +57,12 @@ class MusicController {
             return res.json(customPlaylist);
         });
     }
+    deleteSongOfCustomPlaylist(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('DELETE FROM song_customplaylist WHERE id_FromCustomPlaylist = ? AND id_FromSong = ?', [req.body.id_FromCustomPlaylist, req.body.id_FromSong]);
+            res.json({ message: 'Canción eliminada' });
+        });
+    }
 }
 const musicController = new MusicController();
 exports.default = musicController;

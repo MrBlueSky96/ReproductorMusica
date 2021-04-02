@@ -18,12 +18,16 @@
 
     <div class="separator"></div>
 
-    <div class="songContent" *ngFor="let song of songsOfCustomPlaylist; let i = index" [class.active]="i == clicked">
+    <div class="songContent" *ngFor="let song of songsOfCustomPlaylist; let i = index" [class.active]="i == clicked"
+        (click)="selectCustomSong(i)">
 
+        <p class="songIndex">{{i+1}}</p>
         <div class="songTexts">
             <p class="songTitle">{{song.title_song}}</p>
             <p class="songAutor">{{song.autor_song}}</p>
         </div>
+        <i class="far fa-trash-alt" (click)="deleteSong(i)"></i>
+        <p class="songDuration">{{song.duration_song}}</p>
 
     </div>
 
@@ -38,7 +42,7 @@
     </div>
 
 
-    <div class="songContent" *ngFor="let song of searchedSongs; let i = index" (click)="selectSong(i)"
+    <div class="songContent" *ngFor="let song of searchedSongs; let i = index" (click)="selectSearchedSong(i)"
         [class.active]="i == clicked">
 
         <img [src]="song.image_playlist" alt="">

@@ -14,9 +14,10 @@ class MusicRoutes {
         this.router.get('/', musicController_1.default.list);
         //this.router.get('/:id', musicController.getOne);
         this.router.post('/', musicController_1.default.create);
-        this.router.delete('/:id', musicController_1.default.delete);
+        //this.router.delete('/:id', musicController.delete);
         this.router.put('/:id', musicController_1.default.update);
         this.router.get('/:id', musicController_1.default.listSongsOfCustomPlaylist);
+        this.router.delete('/', musicController_1.default.deleteSongOfCustomPlaylist);
     }
 }
 const musicRoutes = new MusicRoutes();
